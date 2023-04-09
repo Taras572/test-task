@@ -11,15 +11,25 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductModule { }
 
+
 export interface Product {
   id?: string,
   imageUrl: string,
   name: string,
   count: number,
-  size: {
-    width: string,
-    height: string
-  },
+  size: Size,
   weight: string,
-  comments: [string, string]
+  comments: Comments
+}
+
+interface Size {
+  width: number,
+  heigth: number
+}
+
+interface Comments {
+  id?: string,
+  productId: string,
+  description: string,
+  date: string
 }

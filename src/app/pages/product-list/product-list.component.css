@@ -53,4 +53,8 @@
 
 .product-modal__img img {
   width: 100%;
+}
+
+.size {
+  list-style-type: none;
 }/*# sourceMappingURL=product-list.component.css.map */

@@ -9,8 +9,8 @@
                 Sort
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                <li><a class="dropdown-item" href="#" (click)="sortCount=false;sortArr(sortCount)">Sort ABC</a></li>
+                <li><a class="dropdown-item" href="#" (click)="sortCount=true;sortArr(sortCount)">Sort Count</a></li>
             </ul>
         </div>
     </div>
@@ -25,16 +25,17 @@
                     <ul>
                         <li>Name: {{item.name}}</li>
                         <li>Count: {{item.count}}</li>
-                        <li>weight: {{item.weight}}</li>
-                        <div>
+                        <li>Weight: {{item.weight}}</li>
+                        <li>Size:</li>
+                        <div class="size">
                             <li>Width: {{item.size.width}}</li>
                             <li>Heigth: {{item.size.heigth}}</li>
                         </div>
                     </ul>
                 </div>
             </div>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)=" editStatus = true; editProduct(item)"><i
-                    class="uil uil-pen" ></i></button>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)=" editStatus = true; editProduct(item)"><i class="uil uil-pen"></i></button>
         </div>
 
     </div>
@@ -99,7 +100,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-danger" (click)=" removeProduct()">Delete</button>
+                            <button type="button" class="btn btn-outline-danger" (click)=" removeProduct()"
+                                *ngIf="editStatus">Delete</button>
 
                             <button (click)="initProduct(); image = '' " type="button" class="btn btn-outline-danger"
                                 data-bs-dismiss="modal" aria-label="Close">Cancel</button>
